@@ -1,13 +1,15 @@
-{
+{"homepage": "https://tony0710.github.io/plataforma-web-mscm",
   "name": "plataforma-web-mscm",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+  "build": "vite build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "lint": "eslint .",
+  "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.8",
@@ -17,6 +19,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
+    "gh-pages": "^6.3.0",
     "oxlint": "^1.79.0",
     "vite": "^8.2.2"
   }
