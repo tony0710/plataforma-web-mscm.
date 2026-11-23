@@ -1,12 +1,83 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>plataforma-web-mscm</title>
+    <title>Plataforma Web MSCM</title>
+    <style>
+      .menu-entrega-flotante {
+        position: fixed;
+        top: 14px;
+        right: 20px;
+        z-index: 9999;
+        font-family: Arial, sans-serif;
+      }
+      .btn-menu-scrum {
+        background-color: #0b5ed7;
+        color: white;
+        padding: 10px 18px;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      }
+      .btn-menu-scrum:hover {
+        background-color: #084298;
+      }
+      .dropdown-menu-scrum {
+        display: none;
+        position: absolute;
+        right: 0;
+        margin-top: 6px;
+        background-color: #ffffff;
+        min-width: 295px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        border-radius: 6px;
+        border: 1px solid #dcdcdc;
+        overflow: hidden;
+      }
+      .dropdown-menu-scrum a {
+        color: #212529;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f1f1;
+      }
+      .dropdown-menu-scrum a:hover {
+        background-color: #f0f7ff;
+        color: #0b5ed7;
+      }
+      .show-menu {
+        display: block;
+      }
+    </style>
   </head>
   <body>
+    <!-- BOTÓN DE MENÚ ENTREGA FINAL -->
+    <div class="menu-entrega-flotante">
+      <button class="btn-menu-scrum" onclick="document.getElementById('dropdown-entrega').classList.toggle('show-menu')">
+        ☰ Menú del Proyecto
+      </button>
+      <div id="dropdown-entrega" class="dropdown-menu-scrum">
+        <a href="https://drive.google.com/drive/folders/1TpMm63uMY_Hycy1S47G-8zwLvbz1ffCl?usp=drive_link" target="_blank">
+          📋 1. Actividades realizadas en el curso
+        </a>
+        <a href="#root" onclick="document.getElementById('dropdown-entrega').classList.remove('show-menu')">
+          💻 2. Sistema implementado
+        </a>
+        <a href="https://github.com/tony0710/plataforma-web-mscm./raw/main/MSCM_Codigo_Fuente.zip" download>
+          📦 3. Código fuente (comprimido)
+        </a>
+        <a href="https://github.com/tony0710/plataforma-web-mscm." target="_blank">
+          🛠️ 4. Reporte de modificaciones realizadas
+        </a>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
